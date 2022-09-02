@@ -1,0 +1,41 @@
+create table users(
+    id serial primary key,
+    first_name varchar(255),
+    surname varchar(255),
+    username varchar(255),
+    email varchar(255),
+    -- contact int,
+    birth_year int
+    -- birthday varchar(255)
+);
+
+insert into users(first_name, surname, username, email, birth_year) 
+values ('Patrick Kenneford', 'Annan', 'kenneford2022', 'kenn@test.com', 1955);
+
+insert into users(first_name, surname, username, email, birth_year) 
+values ('Maxwell', 'Bonsu', 'maxbonsu2022', 'maxbonsu@test.com',  1972);
+
+insert into users(first_name, surname, username, email, birth_year) 
+values ('Kelly', 'Manuel', 'kelly2022', 'kelly@test.com', 1955);
+
+select * from users;
+
+select * from users
+where birth_year > 1956;
+
+select * from users
+where first_name like '%a%';
+
+select * from users
+where surname like '%a%';
+
+select * from users
+where surname like '%o%'
+and birth_year > 1960;
+
+update users
+set birth_year = 1984
+where id = 3;
+
+delete from users
+where id = 4;
